@@ -1,0 +1,2 @@
+$summon item_display ~ ~ ~ {Tags:["dialog_npc"],Passengers:[{id:"minecraft:interaction",width:$(w)f,height:$(h)f,Tags:["dialog_npc"]}],item:{id:"minecraft:stone",count:1,components:{"minecraft:item_model":"air","minecraft:custom_data":{dialog:{name:"$(name)",id:"$(id)"}}}}}
+#function npc_dialog:admin/summon_interaction {w:1,h:1,name:"Button",id:"start"}

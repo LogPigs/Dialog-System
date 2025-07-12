@@ -1,0 +1,1 @@
+$data modify storage dialog:temp shortString set string storage dialog:temp longString 0 $(typewriterLength)

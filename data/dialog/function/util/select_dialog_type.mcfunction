@@ -1,0 +1,1 @@
+$function dialog:dialog_types/$(dialog_type) $(dialog)
