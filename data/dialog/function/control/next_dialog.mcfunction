@@ -9,8 +9,8 @@ execute unless entity @s[tag=in_dialog] run return fail
 #resets scores to zero
 scoreboard players set @s dialog.typewritetimer 0
 scoreboard players set @s dialog.typewritelength 0
-scoreboard players set @s dialog.scroll 0
-scoreboard players set @s dialog.selected 0
+scoreboard players set @s dialog.scroll 1
+scoreboard players set @s dialog.selected 1
 
 
 tag @s add temp
