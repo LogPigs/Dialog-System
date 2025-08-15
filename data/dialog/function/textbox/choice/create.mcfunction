@@ -22,7 +22,7 @@ execute store result storage dialog:temp shortLength int 1 run scoreboard player
 function dialog:textbox/choice/setlines
 
 #moves dialog.selected based on dialog.selectedItemSlot
-#bug when player moves dialog.selectedItemSlot over end of hotbar
+###BUG when player moves dialog.selectedItemSlot over end of hotbar
 execute store result score @s dialog.selectedItemSlot run data get entity @s SelectedItemSlot 1
 
 execute if score @s dialog.selectedItemSlot < @s dialog.prevSelectedItemSlot run scoreboard players remove @s dialog.selected 1
@@ -30,6 +30,17 @@ execute if score @s dialog.selectedItemSlot > @s dialog.prevSelectedItemSlot run
 
 scoreboard players operation @s dialog.prevSelectedItemSlot = @s dialog.selectedItemSlot
 
+#moves dialog.selected based on W and S key press
+execute if predicate dialog:scroll/any run scoreboard players add @s dialog.input.hold 1
+
+scoreboard players operation .temp dialog.var = @s dialog.input.hold
+scoreboard players set .temp.1 dialog.var 2
+scoreboard players operation .temp dialog.var %= .temp.1 dialog.var
+
+execute if predicate dialog:scroll/up if score .temp dialog.var matches 0 run scoreboard players remove @s dialog.selected 1
+execute if predicate dialog:scroll/down if score .temp dialog.var matches 0 run scoreboard players add @s dialog.selected 1
+
+execute unless predicate dialog:scroll/any run scoreboard players reset @s dialog.input.hold
 
 
 #gets how many options there are
