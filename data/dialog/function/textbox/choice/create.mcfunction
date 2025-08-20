@@ -68,5 +68,5 @@ function dialog:textbox/choice/choices/set_selecter
 
 
 
-data modify storage dialog:temp lines.board set value "b"
+execute store result storage dialog:temp lines.board int 1 run scoreboard players get @s dialog.board
 function dialog:textbox/choice/render with storage dialog:temp lines

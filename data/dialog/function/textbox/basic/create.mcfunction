@@ -24,5 +24,5 @@ execute store result storage dialog:temp shortLength int 1 run scoreboard player
 function dialog:textbox/basic/setlines
 
 
-data modify storage dialog:temp lines.board set value "a"
+execute store result storage dialog:temp lines.board int 1 run scoreboard players get @s dialog.board
 function dialog:textbox/basic/render with storage dialog:temp lines
