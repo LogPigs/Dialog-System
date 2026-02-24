@@ -1,6 +1,8 @@
 #makes sure you can't open a dialog while in dialog
 execute if entity @s[tag=in_dialog] run return fail
-execute if entity @s[nbt={OnGround:0b}] run return fail
+
+execute store result score .temp dialog.var run data get entity @s Motion[1] 100000
+execute unless score .temp dialog.var matches -7841 run return fail
 
 
 
@@ -28,9 +30,9 @@ scoreboard players operation @s dialog.prevSelectedItemSlot = @s dialog.selected
 
 
 #summons interaction entity used to skip and end dialog
-execute at @s anchored eyes run summon interaction ^ ^ ^ {Tags:["temp","dialog_interaction"], width:0.2, height:0.4}
+execute at @s anchored eyes run summon interaction ^ ^ ^ {Tags:["temp","dialog_interaction"], width:0.2, height:0.8}
 #moves interaction entity down
-execute as @n[tag=temp,tag=dialog_interaction] at @s run tp ~ ~-0.2 ~
+execute as @n[tag=temp,tag=dialog_interaction] at @s run tp ~ ~-0.5 ~
 
 
 

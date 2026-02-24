@@ -21,4 +21,4 @@ scoreboard objectives add dialog.input.hold dummy
 
 scoreboard objectives add dialog.board dummy
 
-tellraw @a ["Reloaded Dialog! ",{"clickEvent":{"action":"open_url","value":"https://modrinth.com/resourcepack/mono7"},"color":"#45F9FF","hoverEvent":{"action":"show_text","value":[{"text":"https://modrinth.com/resourcepack/mono7","italic":true}]},"italic":true,"text":"[monospace font by xllifi]"}]
+tellraw @a ["Reloaded Dialog!"]

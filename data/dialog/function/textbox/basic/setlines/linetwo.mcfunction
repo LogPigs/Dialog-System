@@ -1,5 +1,13 @@
-data modify storage dialog:temp lines.line1 set string storage dialog:temp shortString 0 32
-$data modify storage dialog:temp lines.line2 set string storage dialog:temp shortString 32 $(shortLength)
+data modify storage dialog:temp lines.line2 set from storage dialog:temp lineText.rich
+
+scoreboard players set .temp dialog.var 192
+function dialog:util/setspace
 
 
-function dialog:util/add_line_spaces {"input":"dialog:temp lines.line2","amount":"32"}
+data modify storage dialog:temp lines.line2_space set from storage dialog:temp spacer
+
+
+
+scoreboard players set .width dialog.var 0
+data remove storage dialog:temp lineText
+function dialog:textbox/basic/setlines
