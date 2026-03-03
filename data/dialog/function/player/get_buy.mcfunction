@@ -1,14 +1,13 @@
 tag @s add temp
 
 
-
-
 #edits marker storage
 execute as @e[tag=!temp,tag=dialog_storage] if score @s Dialog_ID = @n[tag=temp] Dialog_ID run tag @s add temp_dialog
 
 
 data remove storage dialog:temp input
-$data modify storage dialog:temp input set from entity @n[tag=temp_dialog] data.dialog.options.$(int)
+data modify storage dialog:temp input set from storage dialog:temp option.data
+
 
 
 $scoreboard players operation .int dialog.var = @s $(scoreboard)
