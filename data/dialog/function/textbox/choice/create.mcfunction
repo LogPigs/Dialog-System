@@ -2,6 +2,9 @@
 data modify storage dialog:temp input set from storage dialog:temp longString
 function dialog:util/parce/parce_full
 
+data modify storage dialog:temp char set from storage dialog:temp output[-1]
+execute if data storage dialog:temp chara.sound unless data storage dialog:temp {temp:" "} if score @s dialog.typewritelength < @s dialog.totallength run function dialog:util/get_sound
+
 
 
 #get total length of Long string for line spliting
@@ -92,6 +95,9 @@ function dialog:textbox/choice/choices/set_options
 function dialog:textbox/choice/choices/set_selecter
 
 
+#get if has name
+data modify storage dialog:temp lines.name set value ""
+execute if data storage dialog:temp chara.name run function dialog:util/getname
 
 
 execute store result storage dialog:temp lines.board int 1 run scoreboard players get @s dialog.board

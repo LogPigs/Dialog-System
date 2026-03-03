@@ -1,6 +1,7 @@
 #{text:"d",font:"dialog:spacer"},{"shadow_color":0,"font":"dialog:board",score:{name:"@s",objective:"dialog.board"}},
 
 title @s actionbar [\
+{nbt:"lines.name",storage:"dialog:temp",interpret:1b},\
 {text:"d",font:"dialog:spacer"},{"shadow_color":0,"font":"dialog:choice_board",score:{name:"@s",objective:"dialog.board"}},\
 {text:"ac",font:"dialog:spacer"},{nbt:"lines.line1",storage:"dialog:temp",interpret:1b,font:"dialog:lineone"},{nbt:"lines.line1_space",storage:"dialog:temp",interpret:1b,font:"dialog:spacer"},\
 {nbt:"lines.selected1",storage:"dialog:temp",interpret:1b,font:"dialog:lineone"},\

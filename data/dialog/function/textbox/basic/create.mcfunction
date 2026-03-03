@@ -1,6 +1,8 @@
-
 data modify storage dialog:temp input set from storage dialog:temp longString
 function dialog:util/parce/parce_full
+
+data modify storage dialog:temp char set from storage dialog:temp output[-1]
+execute if data storage dialog:temp chara.sound unless data storage dialog:temp {temp:" "} if score @s dialog.typewritelength < @s dialog.totallength run function dialog:util/get_sound
 
 
 
@@ -18,6 +20,7 @@ data modify storage dialog:temp temp_shortText.raw set from storage dialog:temp 
 data modify storage dialog:temp temp_shortText.rich set from storage dialog:temp output.rich
 
 
+#Shortens text to length
 data remove storage dialog:temp shortText
 scoreboard players operation .int dialog.var = @s dialog.typewritelength
 function dialog:textbox/basic/setshort
@@ -25,22 +28,15 @@ function dialog:textbox/basic/setshort
 
 
 
-#removes one from .shortlength then puts it in storage for line spiltting macros
-#FIXED(i dont know how) need to remove one because otherwise the last line ends with a quotation mark
-#scoreboard players operation .temp dialog.var = .shortlength dialog.var
-#execute store result storage dialog:temp shortLength int 1 run scoreboard players get .temp dialog.var
-
-
-
 data remove storage dialog:temp lines
-data modify storage dialog:temp lines.line1_space set value []
-data modify storage dialog:temp lines.line2_space set value []
-data modify storage dialog:temp lines.line3_space set value []
-data modify storage dialog:temp lines.line4_space set value []
-data modify storage dialog:temp lines.line1 set value []
-data modify storage dialog:temp lines.line2 set value []
-data modify storage dialog:temp lines.line3 set value []
-data modify storage dialog:temp lines.line4 set value []
+#data modify storage dialog:temp lines.line1_space set value []
+#data modify storage dialog:temp lines.line2_space set value []
+#data modify storage dialog:temp lines.line3_space set value []
+#data modify storage dialog:temp lines.line4_space set value []
+#data modify storage dialog:temp lines.line1 set value []
+#data modify storage dialog:temp lines.line2 set value []
+#data modify storage dialog:temp lines.line3 set value []
+#data modify storage dialog:temp lines.line4 set value []
 
 
 
@@ -56,6 +52,13 @@ scoreboard players set .line dialog.var 0
 scoreboard players set .bool.1 dialog.var 0
 data remove storage dialog:temp lineText
 function dialog:textbox/basic/setlines
+
+
+
+
+#get if has name
+data modify storage dialog:temp lines.name set value ""
+execute if data storage dialog:temp chara.name run function dialog:util/getname
 
 
 execute store result storage dialog:temp lines.board int 1 run scoreboard players get @s dialog.board

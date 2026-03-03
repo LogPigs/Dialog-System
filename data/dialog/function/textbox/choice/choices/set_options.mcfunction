@@ -38,9 +38,9 @@ data modify storage dialog:temp input set from storage dialog:temp output
 
 execute store result score .int dialog.var run data get storage dialog:temp input.raw
 
-function dialog:textbox/choice/choices/get_width
+function dialog:util/get_width
 
-scoreboard players set .temp dialog.var 58
+scoreboard players set .temp dialog.var 86
 function dialog:util/setspace
 
 data modify storage dialog:temp lines.scrollLine1.spacer set from storage dialog:temp spacer
@@ -54,9 +54,9 @@ data modify storage dialog:temp input set from storage dialog:temp output
 
 execute store result score .int dialog.var run data get storage dialog:temp input.raw
 
-function dialog:textbox/choice/choices/get_width
+function dialog:util/get_width
 
-scoreboard players set .temp dialog.var 58
+scoreboard players set .temp dialog.var 86
 function dialog:util/setspace
 
 data modify storage dialog:temp lines.scrollLine2.spacer set from storage dialog:temp spacer
@@ -71,9 +71,9 @@ data modify storage dialog:temp input set from storage dialog:temp output
 
 execute store result score .int dialog.var run data get storage dialog:temp input.raw
 
-function dialog:textbox/choice/choices/get_width
+function dialog:util/get_width
 
-scoreboard players set .temp dialog.var 58
+scoreboard players set .temp dialog.var 86
 function dialog:util/setspace
 
 data modify storage dialog:temp lines.scrollLine3.spacer set from storage dialog:temp spacer
@@ -88,9 +88,9 @@ data modify storage dialog:temp input set from storage dialog:temp output
 
 execute store result score .int dialog.var run data get storage dialog:temp input.raw
 
-function dialog:textbox/choice/choices/get_width
+function dialog:util/get_width
 
-scoreboard players set .temp dialog.var 58
+scoreboard players set .temp dialog.var 86
 function dialog:util/setspace
 
 data modify storage dialog:temp lines.scrollLine4.spacer set from storage dialog:temp spacer

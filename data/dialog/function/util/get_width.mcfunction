@@ -9,4 +9,4 @@ data remove storage dialog:temp input.raw[0]
 data remove storage dialog:temp input.rich[0]
 
 scoreboard players remove .int dialog.var 1
-execute unless score .int dialog.var matches ..0 run function dialog:textbox/choice/choices/get_width
+execute unless score .int dialog.var matches ..0 run function dialog:util/get_width

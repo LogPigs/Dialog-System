@@ -17,7 +17,7 @@ execute if data storage dialog:temp {char:"\n"} run return run function dialog:t
 
 function dialog:util/get_char_width
 scoreboard players operation .width dialog.var += .char dialog.var
-execute if score .width dialog.var matches 128.. run return run function dialog:textbox/choice/setlines/width_endline
+execute if score .width dialog.var matches 100.. run return run function dialog:textbox/choice/setlines/width_endline
 
 
 

@@ -18,4 +18,11 @@ tag @s add temp
 #edits marker storage
 $execute as @e[tag=!temp,tag=dialog_storage] if score @s Dialog_ID = @n[tag=temp] Dialog_ID run data modify entity @s data.dialog set from storage dialog:characters $(name)[{id:"$(id)"}]
 
+#stores character info. use in name plates
+execute as @e[tag=!temp,tag=dialog_storage] if score @s Dialog_ID = @n[tag=temp] Dialog_ID run data remove entity @s data.chara
+$execute as @e[tag=!temp,tag=dialog_storage] if score @s Dialog_ID = @n[tag=temp] Dialog_ID run data modify entity @s data.chara set from storage dialog:characters $(name)[{id:"_chara_info"}]
+
+
+
+
 tag @s remove temp

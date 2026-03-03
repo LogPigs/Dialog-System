@@ -1,7 +1,7 @@
 data modify storage dialog:temp lines.line1 set from storage dialog:temp lineText.rich
 
 
-scoreboard players set .temp dialog.var 128
+scoreboard players set .temp dialog.var 100
 function dialog:util/setspace
 
 

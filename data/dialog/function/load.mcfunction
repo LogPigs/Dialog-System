@@ -15,6 +15,7 @@ scoreboard objectives add dialog.selectedItemSlot dummy
 scoreboard objectives add dialog.prevSelectedItemSlot dummy
 scoreboard objectives add dialog.scroll dummy
 scoreboard objectives add dialog.selected dummy
+scoreboard objectives add dialog.last_selected dummy
 
 scoreboard objectives add dialog.input.hold dummy
 

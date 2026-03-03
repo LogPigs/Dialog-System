@@ -1,1 +1,0 @@
-$data modify storage $(output) set value "$(string1)$(string2)"

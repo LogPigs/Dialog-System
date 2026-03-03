@@ -42,6 +42,12 @@ execute at @s anchored eyes run summon marker ~ ~ ~ {Tags:["temp","dialog_storag
 #stores dialog in marker entity
 $data modify entity @n[tag=temp,tag=dialog_storage] data.dialog set from storage dialog:characters $(name)[{id:"$(id)"}]
 
+#stores character info. use in name plates
+data remove entity @n[tag=temp,tag=dialog_storage] data.chara
+$data modify entity @n[tag=temp,tag=dialog_storage] data.chara set from storage dialog:characters $(name)[{id:"_chara_info"}]
+
+
+
 #set Dialog_IDs of marker and interaction entity
 scoreboard players operation @n[tag=temp,tag=dialog_interaction] Dialog_ID = @s Dialog_ID
 scoreboard players operation @n[tag=temp,tag=dialog_storage] Dialog_ID = @s Dialog_ID
