@@ -15,6 +15,7 @@ execute store result score .int.1 dialog.var run data get storage dialog:temp in
 
 execute unless score .int dialog.var >= .int.1 dialog.var run return run function dialog:player/purchase_deny
 
+$scoreboard players operation @s $(scoreboard) -= int.1 dialog.var
 
 data modify storage dialog:temp input set from storage dialog:temp input.item
 function dialog:player/summon_item
