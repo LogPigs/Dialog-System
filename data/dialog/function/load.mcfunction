@@ -2,7 +2,6 @@
 scoreboard objectives add Dialog_ID dummy
 
 
-scoreboard objectives setdisplay list Dialog_ID 
 
 
 
